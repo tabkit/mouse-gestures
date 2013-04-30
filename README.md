@@ -1,19 +1,19 @@
-Tab Kit - Tab Highlighter
+Tab Kit - Mouse Gestures
 =========================
 
-Highlight tabs with different background colors and font styles
+Provide some mouse gesture on tabs and other stuff
 
 Features
 ========
-- Highlight Current Tab in Black
-- Make Current Tab's Text Bold
-- Highlight Unread Tabs in Yellow
-- Highlight Protected Tabs in Green (Protected Tabs feature requires TabKit 2nd Edition)
+- Navigate to last page by clicking LMB while holding RMB (default: on)
+- Switch tabs by scroll wheel when hover on tab bar
+- Switch tabs by scroll wheel when holding right mouse button
+- Switch to a tab when pointer is hovered on it
 - Options can be changed inside Addons Manager
 
 Install
 =======
-https://addons.mozilla.org/en-US/firefox/addon/tab-kit-tab-highlighter/
+(Not released yet)
 
 Changes
 =======
