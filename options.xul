@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <setting pref="extensions.tabkit.mouse-gestures.tabWheelSwitchHover" type="bool" title="Switch tabs by scroll wheel when hover on tab bar">
+
+  </setting>
+  <setting pref="extensions.tabkit.mouse-gestures.tabWheelSwitchRMB" type="bool" title="Switch tabs by scroll wheel when holding right mouse button">
+
+  </setting>
+  <setting pref="extensions.tabkit.mouse-gestures.switchTabsOnHover" type="bool" title="Switch to a tab when pointer is hovered on it">
+    There will be a short delay though (for safety)
+  </setting>
+  <setting pref="extensions.tabkit.mouse-gestures.lmbRmbBackForward" type="bool" title="Go back in page history by clicking LMB while holding RMB and vice versa">
+
+  </setting>
+</vbox>
