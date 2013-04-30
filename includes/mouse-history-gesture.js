@@ -25,6 +25,14 @@ var MouseGesturesHandler = function(window) {
   window.gBrowser.addEventListener("contextmenu", onContextMenuGestureBind, true);
   unload(function() window.gBrowser.removeEventListener("contextmenu", onContextMenuGestureBind, true));
 
+  var onMouseDragGestureBind = this.onMouseDragGesture.bind(this);
+  window.gBrowser.addEventListener("draggesture", onMouseDragGestureBind, true);
+  unload(function() window.gBrowser.removeEventListener("draggesture", onMouseDragGestureBind, true));
+
+  var onMouseOutGestureBind = this.onMouseOutGesture.bind(this);
+  window.gBrowser.addEventListener("mouseout", onMouseOutGestureBind, true);
+  unload(function() window.gBrowser.removeEventListener("mouseout", onMouseOutGestureBind, true));
+
 
   var onTabWheelGestureBind = this.onTabWheelGesture.bind(this);
   window.gBrowser.tabContainer.addEventListener("DOMMouseScroll", onTabWheelGestureBind, true);
@@ -124,6 +132,22 @@ MouseGesturesHandler.prototype = {
     event.stopPropagation();
 
     this._shouldPreventContext = false;
+  },
+
+  onMouseDragGesture: function (event) {
+    if (!event.isTrusted)
+      return;
+
+    this._mousedown[0] = this._mousedown[2] = false;
+  },
+
+  onMouseOutGesture: function (event) {
+    if (!event.isTrusted || event.target != event.currentTarget) // n.b. this refers to gBrowser, not tabkit!
+      return;
+
+    //comment it for fixing Issue 23(RMBWheelGesture not work after one scroll)
+    // this._mousedown[2] = false;
+    this._mousedown[0] = false;
   },
 
 
