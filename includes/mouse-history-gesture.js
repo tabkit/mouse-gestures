@@ -228,7 +228,6 @@ MouseGesturesHandler.prototype = {
 
 
   onTabHoverGesture: function (event) {
-    log('onTabHoverGesture start');
     if (!event.isTrusted || event.target.localName != "tab" || !prefUtils.getPref("switchTabsOnHover")) {
       return;
     }
@@ -249,8 +248,6 @@ MouseGesturesHandler.prototype = {
       this._window.gBrowser.selectedTab = this._hoverTab;
       this._lastHoverTime = Date.now();
     }.bind(this), wait);
-
-    log('onTabHoverGesture end');
   },
 
   cancelTabHoverGesture: function (event) {
