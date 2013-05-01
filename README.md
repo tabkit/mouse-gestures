@@ -13,8 +13,8 @@ Features
 
 Install
 =======
-(Not released yet)
+https://addons.mozilla.org/en-US/firefox/addon/tab-kit-mouse-gestures/
 
 Changes
 =======
-See CHANGELOG.md for what's changed
+See https://github.com/tabkit/mouse-gestures/blob/master/CHANGELOG.md for what's changed
