@@ -254,6 +254,6 @@ MouseGesturesHandler.prototype = {
     if (!event.isTrusted || event.target != this._hoverTab)
       return;
 
-    this._window.clearTimeout(_hoverTimer);
+    this._window.clearTimeout(this._hoverTimer);
   }
 };
