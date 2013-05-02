@@ -251,11 +251,9 @@ MouseGesturesHandler.prototype = {
   },
 
   cancelTabHoverGesture: function (event) {
-    log('cancelTabHoverGesture start');
     if (!event.isTrusted || event.target != this._hoverTab)
       return;
 
     this._window.clearTimeout(_hoverTimer);
-    log('cancelTabHoverGesture end');
   }
 };
