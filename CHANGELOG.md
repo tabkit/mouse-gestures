@@ -1,6 +1,6 @@
 ### Changelog
 
-- **dev**
+- **0.1.1**
   - Fix: Delay is wokring for "Switch to a tab when cursor is hovered on it"
   - Fix: Context Menu no longer show up when using "Switch tabs by scroll wheel when holding right mouse button"
 
