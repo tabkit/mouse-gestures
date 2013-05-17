@@ -65,7 +65,6 @@ MouseGesturesHandler.prototype = {
 
   _hoverTab: null,
   _hoverTimer: null,
-  _lastHoverTime: 0,
 
 
   onMouseUpGesture: function (event) {
@@ -233,21 +232,21 @@ MouseGesturesHandler.prototype = {
     }
 
     this._hoverTab = event.target;
-    // Switch instantly if less than 200ms since last switch, or to tabs next to current tab if less than 1s
-    var instantSwitchTime = Math.abs(this._hoverTab._tPos - this._window.gBrowser.selectedTab._tPos) == 1 ? 1000 : 200;
-    if ((Date.now() - this._lastHoverTime) < (instantSwitchTime)) {
-      var wait = 0;
-    }
-    else {
-      var wait = 200;
+
+    // Minimum delay, might make it a config later
+    var waitTime = 200;
+    // See whether the tab hovering on is just next to the current tab
+    var isNeighbourTab = (Math.abs(this._hoverTab._tPos - this._window.gBrowser.selectedTab._tPos) == 1)
+    // if hovering neighbour tab, use a longer delay in case it is an accident hover (especially in vertical mode)
+    if (isNeighbourTab) {
+      waitTime = 500;
     }
 
     this._window.clearTimeout(this._hoverTimer);
 
     this._hoverTimer = this._window.setTimeout(function () {
       this._window.gBrowser.selectedTab = this._hoverTab;
-      this._lastHoverTime = Date.now();
-    }.bind(this), wait);
+    }.bind(this), waitTime);
   },
 
   cancelTabHoverGesture: function (event) {
