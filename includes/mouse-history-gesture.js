@@ -171,8 +171,9 @@ MouseGesturesHandler.prototype = {
       return;
 
     this.scrollwheelTabSwitch(event);
-    if (event.change != 0)
-      _shouldPreventContext = true;
+    if (event.change != 0) {
+      this._shouldPreventContext = true;
+    }
   },
 
   // To be called by onTabWheelGesture & onRMBWheelGesture
