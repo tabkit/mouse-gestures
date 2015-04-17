@@ -7,7 +7,7 @@ function initMouseGestures (window) {
   var handlerIndex = _handlers.push(new MouseGesturesHandler(window)) - 1;
   // Might not be necessary, but whatever
   unload(function() { handler[handlerIndex] = null; });
-};
+}
 
 var MouseGesturesHandler = function(window) {
   this._window = window;
@@ -37,6 +37,10 @@ var MouseGesturesHandler = function(window) {
   var onTabWheelGestureBind = this.onTabWheelGesture.bind(this);
   window.gBrowser.tabContainer.addEventListener("DOMMouseScroll", onTabWheelGestureBind, true);
   unload(function() window.gBrowser.tabContainer.removeEventListener("DOMMouseScroll", onTabWheelGestureBind, true));
+
+  var onLMBWheelGestureBind = this.onLMBWheelGesture.bind(this);
+  window.gBrowser.addEventListener("DOMMouseScroll", onLMBWheelGestureBind, true);
+  unload(function() window.gBrowser.removeEventListener("DOMMouseScroll", onLMBWheelGestureBind, true));
 
   var onRMBWheelGestureBind = this.onRMBWheelGesture.bind(this);
   window.gBrowser.addEventListener("DOMMouseScroll", onRMBWheelGestureBind, true);
@@ -95,15 +99,15 @@ MouseGesturesHandler.prototype = {
     //0 = LMB, 2 = RMB
     var btn = event.button;
     var opp;  //opposite button
-    if (btn == 0)
+    if (btn === 0)
       opp = 2;
-    else if (btn == 2)
+    else if (btn === 2)
       opp = 0;
     else
       return;
 
     if (this._mousedown[opp] && prefUtils.getPref("lmbRmbBackForward")) {
-      if (btn == 0)
+      if (btn === 0)
         this._window.BrowserBack();
       else
         this._window.BrowserForward();
@@ -166,12 +170,22 @@ MouseGesturesHandler.prototype = {
     }
   },
 
+  onLMBWheelGesture: function(event) {
+    if (!event.isTrusted || !this._mousedown[0] || !prefUtils.getPref("tabWheelSwitchLMB"))
+      return;
+
+    this.scrollwheelTabSwitch(event);
+    if (event.change !== 0) {
+      this._shouldPreventContext = true;
+    }
+  },
+
   onRMBWheelGesture: function(event) {
     if (!event.isTrusted || !this._mousedown[2] || !prefUtils.getPref("tabWheelSwitchRMB"))
       return;
 
     this.scrollwheelTabSwitch(event);
-    if (event.change != 0) {
+    if (event.change !== 0) {
       this._shouldPreventContext = true;
     }
   },
@@ -237,7 +251,7 @@ MouseGesturesHandler.prototype = {
     // Minimum delay, might make it a config later
     var waitTime = 200;
     // See whether the tab hovering on is just next to the current tab
-    var isNeighbourTab = (Math.abs(this._hoverTab._tPos - this._window.gBrowser.selectedTab._tPos) == 1)
+    var isNeighbourTab = (Math.abs(this._hoverTab._tPos - this._window.gBrowser.selectedTab._tPos) == 1);
     // if hovering neighbour tab, use a longer delay in case it is an accident hover (especially in vertical mode)
     if (isNeighbourTab) {
       waitTime = 500;

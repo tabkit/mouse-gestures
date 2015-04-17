@@ -1,5 +1,8 @@
 ### Changelog
 
+- **Unreleased**
+  - Feature: Switch tabs by scroll wheel when holding left mouse button
+
 - **0.1.2**
   - Fix: Re-run initialization code after failure
 

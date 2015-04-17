@@ -8,6 +8,7 @@ const PREF_BRANCH = "extensions.tabkit.mouse-gestures.";
 const PREFS = {
   tabWheelSwitchHover: false,
   tabWheelSwitchRMB: false,
+  tabWheelSwitchLMB: false,
   switchTabsOnHover: false,
   lmbRmbBackForward: true
 };

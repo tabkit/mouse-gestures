@@ -6,6 +6,9 @@
   <setting pref="extensions.tabkit.mouse-gestures.tabWheelSwitchRMB" type="bool" title="Switch tabs by scroll wheel when holding right mouse button">
 
   </setting>
+  <setting pref="extensions.tabkit.mouse-gestures.tabWheelSwitchLMB" type="bool" title="Switch tabs by scroll wheel when holding left mouse button">
+
+  </setting>
   <setting pref="extensions.tabkit.mouse-gestures.switchTabsOnHover" type="bool" title="Switch to a tab when pointer is hovered on it">
     There will be a short delay though (for safety)
   </setting>
