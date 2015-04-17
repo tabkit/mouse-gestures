@@ -1,6 +1,6 @@
 ### Changelog
 
-- **Unreleased**
+- **0.2.0**
   - Feature: Switch tabs by scroll wheel when holding left mouse button
 
 - **0.1.2**
