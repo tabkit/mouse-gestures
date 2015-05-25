@@ -1,5 +1,8 @@
 ### Changelog
 
+- **Unreleased**
+  - Fix: Some mouse gestures did not work properly when cursor is in tab container (tab bar)
+
 - **0.2.0**
   - Feature: Switch tabs by scroll wheel when holding left mouse button
 
@@ -7,7 +10,7 @@
   - Fix: Re-run initialization code after failure
 
 - **0.1.1**
-  - Fix: Delay is wokring for "Switch to a tab when cursor is hovered on it"
+  - Fix: Delay is working for "Switch to a tab when cursor is hovered on it"
   - Fix: Context Menu no longer show up when using "Switch tabs by scroll wheel when holding right mouse button"
 
 - **0.1.0**

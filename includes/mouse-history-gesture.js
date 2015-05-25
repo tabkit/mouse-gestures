@@ -16,18 +16,26 @@ var MouseGesturesHandler = function(window) {
   var onMouseUpGestureBind = this.onMouseUpGesture.bind(this);
   window.gBrowser.addEventListener("mouseup", onMouseUpGestureBind, true);
   unload(function() window.gBrowser.removeEventListener("mouseup", onMouseUpGestureBind, true));
+  window.gBrowser.tabContainer.addEventListener("mouseup", onMouseUpGestureBind, true);
+  unload(function() window.gBrowser.tabContainer.removeEventListener("mouseup", onMouseUpGestureBind, true));
 
   var onMouseDownGestureBind = this.onMouseDownGesture.bind(this);
   window.gBrowser.addEventListener("mousedown", onMouseDownGestureBind, true);
   unload(function() window.gBrowser.removeEventListener("mousedown", onMouseDownGestureBind, true));
+  window.gBrowser.tabContainer.addEventListener("mousedown", onMouseDownGestureBind, true);
+  unload(function() window.gBrowser.tabContainer.removeEventListener("mousedown", onMouseDownGestureBind, true));
 
   var onContextMenuGestureBind = this.onContextMenuGesture.bind(this);
   window.gBrowser.addEventListener("contextmenu", onContextMenuGestureBind, true);
   unload(function() window.gBrowser.removeEventListener("contextmenu", onContextMenuGestureBind, true));
+  window.gBrowser.tabContainer.addEventListener("contextmenu", onContextMenuGestureBind, true);
+  unload(function() window.gBrowser.tabContainer.removeEventListener("contextmenu", onContextMenuGestureBind, true));
 
   var onMouseDragGestureBind = this.onMouseDragGesture.bind(this);
   window.gBrowser.addEventListener("draggesture", onMouseDragGestureBind, true);
   unload(function() window.gBrowser.removeEventListener("draggesture", onMouseDragGestureBind, true));
+  window.gBrowser.tabContainer.addEventListener("draggesture", onMouseDragGestureBind, true);
+  unload(function() window.gBrowser.tabContainer.removeEventListener("draggesture", onMouseDragGestureBind, true));
 
   var onMouseOutGestureBind = this.onMouseOutGesture.bind(this);
   window.gBrowser.addEventListener("mouseout", onMouseOutGestureBind, true);
@@ -103,8 +111,6 @@ MouseGesturesHandler.prototype = {
       opp = 2;
     else if (btn === 2)
       opp = 0;
-    else
-      return;
 
     if (this._mousedown[opp] && prefUtils.getPref("lmbRmbBackForward")) {
       if (btn === 0)
