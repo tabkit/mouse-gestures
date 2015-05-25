@@ -1,6 +1,6 @@
 ### Changelog
 
-- **Unreleased**
+- **0.3.0**
   - Feature: New option for closing tab with LMB click with Ctrl/Cmd pressed
   - Fix: Some mouse gestures did not work properly when cursor is in tab container (tab bar)
 
