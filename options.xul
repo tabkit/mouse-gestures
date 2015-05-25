@@ -15,4 +15,7 @@
   <setting pref="extensions.tabkit.mouse-gestures.lmbRmbBackForward" type="bool" title="Go back in page history by clicking LMB while holding RMB and vice versa">
 
   </setting>
+  <setting pref="extensions.tabkit.mouse-gestures.closeTabWithCtrlLMB" type="bool" title="Close tab when clicking left mouse button on a tab with Ctrl key pressed">
+    For OSX it should be Cmd key
+  </setting>
 </vbox>

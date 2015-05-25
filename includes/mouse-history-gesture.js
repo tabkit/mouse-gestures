@@ -128,6 +128,15 @@ MouseGesturesHandler.prototype = {
     else {
       this._mousedown[btn] = true;
     }
+
+    var tab = event.target;
+    // Cmd key represented by #metaKey
+    // http://www.w3.org/TR/DOM-Level-3-Events/
+    if (btn === 0 && (event.ctrlKey || event.metaKey)) {
+      if (tab && tab.localName == "tab" && prefUtils.getPref("closeTabWithCtrlLMB")) {
+        this._window.gBrowser.removeTab(tab);
+      }
+    }
   },
 
 

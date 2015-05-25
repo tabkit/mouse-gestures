@@ -10,7 +10,8 @@ const PREFS = {
   tabWheelSwitchRMB: false,
   tabWheelSwitchLMB: false,
   switchTabsOnHover: false,
-  lmbRmbBackForward: true
+  lmbRmbBackForward: true,
+  closeTabWithCtrlLMB: false
 };
 
 // Make sure we can use gPrefService from now on (even if this isn't a browser window!)
