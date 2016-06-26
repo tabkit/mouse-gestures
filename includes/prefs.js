@@ -9,7 +9,10 @@ const PREFS = {
   tabWheelSwitchHover: false,
   tabWheelSwitchRMB: false,
   tabWheelSwitchLMB: false,
+
   switchTabsOnHover: false,
+  switch_tab_on_hover_delay_length_in_millisecond: 200,
+
   lmbRmbBackForward: true,
   closeTabWithCtrlLMB: false
 };

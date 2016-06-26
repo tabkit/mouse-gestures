@@ -264,12 +264,18 @@ MouseGesturesHandler.prototype = {
     this._hoverTab = event.target;
 
     // Minimum delay, might make it a config later
-    var waitTime = 200;
+    const DEFAULT_VALUE = 200;
+    let value_from_pref = prefUtils.getPref("switch_tab_on_hover_delay_length_in_millisecond");
+    var waitTime = (
+      typeof value_from_pref !== "number" ||
+      isNaN(value_from_pref) ||
+      value_from_pref < 0
+    ) ? DEFAULT_VALUE : value_from_pref;
     // See whether the tab hovering on is just next to the current tab
     var isNeighbourTab = (Math.abs(this._hoverTab._tPos - this._window.gBrowser.selectedTab._tPos) == 1);
     // if hovering neighbour tab, use a longer delay in case it is an accident hover (especially in vertical mode)
     if (isNeighbourTab) {
-      waitTime = 500;
+      waitTime = waitTime * 2;
     }
 
     this._window.clearTimeout(this._hoverTimer);
