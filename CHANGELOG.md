@@ -1,5 +1,8 @@
 ### Changelog
 
+- **0.3.1**
+  - Feature: New option for custom delay of "Switch to a tab when pointer is hovered on it"
+
 - **0.3.0**
   - Feature: New option for closing tab with LMB click with Ctrl/Cmd pressed
   - Fix: Some mouse gestures did not work properly when cursor is in tab container (tab bar)
