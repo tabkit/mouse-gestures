@@ -43,16 +43,16 @@ var MouseGesturesHandler = function(window) {
 
 
   var onTabWheelGestureBind = this.onTabWheelGesture.bind(this);
-  window.gBrowser.tabContainer.addEventListener("DOMMouseScroll", onTabWheelGestureBind, true);
-  unload(function() window.gBrowser.tabContainer.removeEventListener("DOMMouseScroll", onTabWheelGestureBind, true));
+  window.gBrowser.tabContainer.addEventListener("wheel", onTabWheelGestureBind, true);
+  unload(function() window.gBrowser.tabContainer.removeEventListener("wheel", onTabWheelGestureBind, true));
 
   var onLMBWheelGestureBind = this.onLMBWheelGesture.bind(this);
-  window.gBrowser.addEventListener("DOMMouseScroll", onLMBWheelGestureBind, true);
-  unload(function() window.gBrowser.removeEventListener("DOMMouseScroll", onLMBWheelGestureBind, true));
+  window.gBrowser.addEventListener("wheel", onLMBWheelGestureBind, true);
+  unload(function() window.gBrowser.removeEventListener("wheel", onLMBWheelGestureBind, true));
 
   var onRMBWheelGestureBind = this.onRMBWheelGesture.bind(this);
-  window.gBrowser.addEventListener("DOMMouseScroll", onRMBWheelGestureBind, true);
-  unload(function() window.gBrowser.removeEventListener("DOMMouseScroll", onRMBWheelGestureBind, true));
+  window.gBrowser.addEventListener("wheel", onRMBWheelGestureBind, true);
+  unload(function() window.gBrowser.removeEventListener("wheel", onRMBWheelGestureBind, true));
 
   var resetMouseScrollWrapCounterBind = this.resetMouseScrollWrapCounter.bind(this);
   window.gBrowser.tabContainer.addEventListener("TabSelect", resetMouseScrollWrapCounterBind, false);
@@ -208,7 +208,7 @@ MouseGesturesHandler.prototype = {
   // To be called by onTabWheelGesture & onRMBWheelGesture
   // Not to be binded with any event
   scrollwheelTabSwitch: function (event) {
-    var change = event.detail;
+    var change = event.deltaY;
 
     // Scrolling up
     if (change > 0) {
