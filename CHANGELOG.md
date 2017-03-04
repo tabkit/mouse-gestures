@@ -6,13 +6,25 @@ This project does NOT adhere to [Semantic Versioning](http://semver.org/) YET (W
 ## [Unreleased][unreleased] - YYYY-MM-DD
 
 ### Added
-- New option for custom delay of "Switch to a tab when pointer is hovered on it"
+- Nothing
 
 ### Changed
 - Nothing
 
 ### Fixed
-- Fix switch tab by scrolling on FF 52
+- Nothing
+
+
+## [0.3.2.1][0.3.2.1] - 2017-03-04
+
+### Added
+- Nothing
+
+### Changed
+- Nothing
+
+### Fixed
+- Fix switch tab by scrolling on Tab Bar in FF 52
 
 ## [0.3.1][0.3.1] - 2016-06-19
 
@@ -57,9 +69,10 @@ This project does NOT adhere to [Semantic Versioning](http://semver.org/) YET (W
 - Switch to a tab when cursor is hovered on it
 
 
-[unreleased]:   https://github.com/tabkit/mouse-gestures/compare/v0.3.1...HEAD
-[0.1.1]:        https://github.com/tabkit/mouse-gestures/compare/v0.3.0...v0.3.1
-[0.1.1]:        https://github.com/tabkit/mouse-gestures/compare/v0.2.0...v0.3.0
-[0.1.1]:        https://github.com/tabkit/mouse-gestures/compare/v0.1.2...v0.2.0
-[0.1.1]:        https://github.com/tabkit/mouse-gestures/compare/v0.1.1...v0.1.2
+[unreleased]:   https://github.com/tabkit/mouse-gestures/compare/v0.3.2.1...HEAD
+[0.3.2.1]:      https://github.com/tabkit/mouse-gestures/compare/v0.3.1...v0.3.2.1
+[0.3.1]:        https://github.com/tabkit/mouse-gestures/compare/v0.3.0...v0.3.1
+[0.3.0]:        https://github.com/tabkit/mouse-gestures/compare/v0.2.0...v0.3.0
+[0.2.0]:        https://github.com/tabkit/mouse-gestures/compare/v0.1.2...v0.2.0
+[0.1.2]:        https://github.com/tabkit/mouse-gestures/compare/v0.1.1...v0.1.2
 [0.1.1]:        https://github.com/tabkit/mouse-gestures/compare/v0.1.0...v0.1.1
