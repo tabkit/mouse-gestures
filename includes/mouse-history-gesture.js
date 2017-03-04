@@ -32,10 +32,10 @@ var MouseGesturesHandler = function(window) {
   unload(function() window.gBrowser.tabContainer.removeEventListener("contextmenu", onContextMenuGestureBind, true));
 
   var onMouseDragGestureBind = this.onMouseDragGesture.bind(this);
-  window.gBrowser.addEventListener("draggesture", onMouseDragGestureBind, true);
-  unload(function() window.gBrowser.removeEventListener("draggesture", onMouseDragGestureBind, true));
-  window.gBrowser.tabContainer.addEventListener("draggesture", onMouseDragGestureBind, true);
-  unload(function() window.gBrowser.tabContainer.removeEventListener("draggesture", onMouseDragGestureBind, true));
+  window.gBrowser.addEventListener("dragstart", onMouseDragGestureBind, true);
+  unload(function() window.gBrowser.removeEventListener("dragstart", onMouseDragGestureBind, true));
+  window.gBrowser.tabContainer.addEventListener("dragstart", onMouseDragGestureBind, true);
+  unload(function() window.gBrowser.tabContainer.removeEventListener("dragstart", onMouseDragGestureBind, true));
 
   var onMouseOutGestureBind = this.onMouseOutGesture.bind(this);
   window.gBrowser.addEventListener("mouseout", onMouseOutGestureBind, true);
