@@ -16,8 +16,8 @@
     <targetApplication>
       <r:Description>
         <id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</id>
-        <minVersion>8.0</minVersion>
-        <maxVersion>45.*</maxVersion>
+        <minVersion>45.0</minVersion>
+        <maxVersion>52.*</maxVersion>
       </r:Description>
     </targetApplication>
   </r:Description>
