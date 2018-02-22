@@ -15,6 +15,18 @@ This project does NOT adhere to [Semantic Versioning](http://semver.org/) YET (W
 - Nothing
 
 
+## [0.3.3][0.3.3] - 2018-02-22
+
+### Added
+- Nothing
+
+### Changed
+- Nothing
+
+### Fixed
+- Nothing
+
+
 ## [0.3.2.1][0.3.2.1] - 2017-03-04
 
 ### Added
