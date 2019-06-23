@@ -2,7 +2,7 @@
  * Version: MPL 1.1/GPL 2.0/LGPL 2.1
  *
  * The contents of this file are subject to the Mozilla Public License Version
- * 1.1 (the "License"); you may not use this file except in compliance with
+ * 1.1 (the "License") you may not use this file except in compliance with
  * the License. You may obtain a copy of the License at
  * http://www.mozilla.org/MPL/
  *
@@ -43,54 +43,55 @@
  * @usage unload(): Run all callbacks and release them.
  *
  * @usage unload(callback): Add a callback to run on unload.
- * @param [function] callback: 0-parameter function to call on unload.
+ * @param callback [function] : 0-parameter function to call on unload.
  * @return [function]: A 0-parameter function that undoes adding the callback.
  *
  * @usage unload(callback, container) Add a scoped callback to run on unload.
- * @param [function] callback: 0-parameter function to call on unload.
- * @param [node] container: Remove the callback when this container unloads.
+ * @param callback [function] : 0-parameter function to call on unload.
+ * @param container [node] : Remove the callback when this container unloads.
  * @return [function]: A 0-parameter function that undoes adding the callback.
  */
 exports.unload = function unload(callback, container) {
   // Initialize the array of unloaders on the first usage
-  let unloaders = unload.unloaders;
-  if (unloaders == null)
-    unloaders = unload.unloaders = [];
+  if (unload.unloaders == null) {
+    unload.unloaders = []
+  }
+  const unloaders = unload.unloaders
 
   // Calling with no arguments runs all the unloader callbacks
   if (callback == null) {
-    unloaders.slice().forEach(function(unloader) unloader());
-    unloaders.length = 0;
-    return;
+    unloaders.slice().forEach(function(unloader) { unloader() })
+    unloaders.length = 0
+    return
   }
 
   // The callback is bound to the lifetime of the container if we have one
   if (container != null) {
     // Remove the unloader when the container unloads
-    container.addEventListener("unload", removeUnloader, false);
+    container.addEventListener("unload", removeUnloader, false)
 
     // Wrap the callback to additionally remove the unload listener
-    let origCallback = callback;
+    const origCallback = callback
     callback = function() {
-      container.removeEventListener("unload", removeUnloader, false);
-      origCallback();
+      container.removeEventListener("unload", removeUnloader, false)
+      origCallback()
     }
   }
 
   // Wrap the callback in a function that ignores failures
   function unloader() {
     try {
-      callback();
+      callback()
     }
     catch(ex) {}
   }
-  unloaders.push(unloader);
+  unloaders.push(unloader)
 
   // Provide a way to remove the unloader
   function removeUnloader() {
-    let index = unloaders.indexOf(unloader);
-    if (index != -1)
-      unloaders.splice(index, 1);
+    const index = unloaders.indexOf(unloader)
+    if (index !== -1)
+      unloaders.splice(index, 1)
   }
-  return removeUnloader;
+  return removeUnloader
 }

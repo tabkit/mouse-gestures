@@ -1,2 +1,2 @@
 exports = Cc["@mozilla.org/browser/sessionstore;1"]
-        .getService(Ci.nsISessionStore);
+        .getService(Ci.nsISessionStore)
