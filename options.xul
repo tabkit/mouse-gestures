@@ -12,6 +12,11 @@
 
   </setting>
 
+  <setting pref="extensions.tabkit.mouse-gestures.tabWheelSwitchOverEdges" type="bool" title="Enable Scroll Wheel Tab Switching over the edge">
+    Some user don't want using scroll wheel to switch between First Tab and Last Tab.
+    Uncheck this preference to make a magic wall. :)
+  </setting>
+
   <setting pref="extensions.tabkit.mouse-gestures.switchTabsOnHover" type="bool" title="Switch to a tab when pointer is hovered on it">
     There will be a short delay though (for safety)
   </setting>

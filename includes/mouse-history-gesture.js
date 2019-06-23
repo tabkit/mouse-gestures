@@ -226,7 +226,8 @@ MouseGesturesHandler.prototype = {
         this._window.gBrowser.tabContainer.advanceSelectedTab(1, true)
         // Note: _mouseScrollWrapCounter is reset whenever a tab is selected
       }
-      else {
+      // Only increment the counter when preference checked
+      else if (prefUtils.getPref("tabWheelSwitchOverEdges")) {
         this._mouseScrollWrapCounter++
       }
     }
@@ -244,7 +245,8 @@ MouseGesturesHandler.prototype = {
         this._window.gBrowser.tabContainer.advanceSelectedTab(-1, true)
         // Note: _mouseScrollWrapCounter is reset whenever a tab is selected
       }
-      else {
+      // Only increment the counter when preference checked
+      else if (prefUtils.getPref("tabWheelSwitchOverEdges")) {
         this._mouseScrollWrapCounter++
       }
     }
