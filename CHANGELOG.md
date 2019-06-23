@@ -15,6 +15,19 @@ This project does NOT adhere to [Semantic Versioning](http://semver.org/) YET (W
 - Nothing
 
 
+## [0.4.0][0.4.0] - 2019-06-23
+
+### Added
+- New option for enable/disable "Scroll Wheel Tab Switching over the edge"  
+  (Issue: https://github.com/tabkit/mouse-gestures/issues/6)
+
+
+## [0.3.3][0.3.3] - 2018-02-22
+
+### Changed
+- Target Pale Moon instead of Firefox
+
+
 ## [0.3.3][0.3.3] - 2018-02-22
 
 ### Changed
@@ -69,8 +82,9 @@ This project does NOT adhere to [Semantic Versioning](http://semver.org/) YET (W
 - Switch to a tab when cursor is hovered on it
 
 
-[unreleased]:   https://github.com/tabkit/mouse-gestures/compare/v0.3.3...HEAD
-[0.3.3]:      https://github.com/tabkit/mouse-gestures/compare/v0.3.2.1...v0.3.3
+[unreleased]:   https://github.com/tabkit/mouse-gestures/compare/v0.4.0...HEAD
+[0.4.0]:        https://github.com/tabkit/mouse-gestures/compare/v0.3.3...v0.4.0
+[0.3.3]:        https://github.com/tabkit/mouse-gestures/compare/v0.3.2.1...v0.3.3
 [0.3.2.1]:      https://github.com/tabkit/mouse-gestures/compare/v0.3.1...v0.3.2.1
 [0.3.1]:        https://github.com/tabkit/mouse-gestures/compare/v0.3.0...v0.3.1
 [0.3.0]:        https://github.com/tabkit/mouse-gestures/compare/v0.2.0...v0.3.0

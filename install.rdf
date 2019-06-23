@@ -5,7 +5,7 @@
     <creator>PikachuEXE</creator>
     <id>tabkit.mouse-gestures@pikachuexe.amateur.hk</id>
     <name>Tab Kit - Mouse Gestures</name>
-    <version>0.3.3</version>
+    <version>0.4.0</version>
     <bootstrap>true</bootstrap>
     <type>2</type>
     <homepageURL>https://github.com/tabkit/mouse-gestures</homepageURL>
@@ -17,7 +17,7 @@
       <r:Description>
         <id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</id>
         <minVersion>27.0</minVersion>
-        <maxVersion>27.*</maxVersion>
+        <maxVersion>28.*</maxVersion>
       </r:Description>
     </targetApplication>
   </r:Description>
